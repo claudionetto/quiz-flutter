@@ -13,7 +13,6 @@ class Resultado extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     final argumentos = ModalRoute.of(context)?.settings.arguments as Argumentos;
 
     return MaterialApp(
@@ -39,7 +38,9 @@ class Resultado extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'Quiz');
+                    },
                     child: Text(
                       'Jogar novamente',
                       style: TextStyle(fontSize: 20),

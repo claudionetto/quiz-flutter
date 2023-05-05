@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_mobile/resultados.dart';
+import 'package:quiz_mobile/quiz_dados.dart';
 
 class Quiz extends StatefulWidget {
-  const Quiz({super.key});
+  const Quiz({super.key, required this.quiz});
+
+  final List quiz;
 
   @override
   State<Quiz> createState() => _QuizState();
@@ -15,111 +18,7 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(BuildContext context) {
-    List quiz = [
-      {
-        "pergunta": "Quem descobriu o Brasil?",
-        "respostas": [
-          "Dom Pedro I",
-          "Pedro Alvares Cabral",
-          "Dom Pedro II",
-          "Tiradentes",
-        ],
-        "alternativa_correta": 2,
-      }
-    ];
-
-    quiz.add({
-      "pergunta": "O Flutter é: ",
-      "respostas": [
-        "Uma linguagem",
-        "Um aplicativo",
-        "Uma SDK",
-        "Um notebook",
-      ],
-      "alternativa_correta": 3,
-    });
-
-    quiz.add({
-      "pergunta": "O Flutter é: ",
-      "respostas": [
-        "Uma linguagem",
-        "Um aplicativo",
-        "Uma SDK",
-        "Um notebook",
-      ],
-      "alternativa_correta": 3,
-    });
-    quiz.add({
-      "pergunta": "O Flutter é: ",
-      "respostas": [
-        "Uma linguagem",
-        "Um aplicativo",
-        "Uma SDK",
-        "Um notebook",
-      ],
-      "alternativa_correta": 3,
-    });
-    quiz.add({
-      "pergunta": "O Flutter é: ",
-      "respostas": [
-        "Uma linguagem",
-        "Um aplicativo",
-        "Uma SDK",
-        "Um notebook",
-      ],
-      "alternativa_correta": 3,
-    });
-    quiz.add({
-      "pergunta": "O Flutter é: ",
-      "respostas": [
-        "Uma linguagem",
-        "Um aplicativo",
-        "Uma SDK",
-        "Um notebook",
-      ],
-      "alternativa_correta": 3,
-    });
-    quiz.add({
-      "pergunta": "O Flutter é: ",
-      "respostas": [
-        "Uma linguagem",
-        "Um aplicativo",
-        "Uma SDK",
-        "Um notebook",
-      ],
-      "alternativa_correta": 3,
-    });
-    quiz.add({
-      "pergunta": "O Flutter é: ",
-      "respostas": [
-        "Uma linguagem",
-        "Um aplicativo",
-        "Uma SDK",
-        "Um notebook",
-      ],
-      "alternativa_correta": 3,
-    });
-    quiz.add({
-      "pergunta": "O Flutter é: ",
-      "respostas": [
-        "Uma linguagem",
-        "Um aplicativo",
-        "Uma SDK",
-        "Um notebook",
-      ],
-      "alternativa_correta": 3,
-    });
-    quiz.add({
-      "pergunta": "O Flutter é: ",
-      "respostas": [
-        "Uma linguagem",
-        "Um aplicativo",
-        "Uma SDK",
-        "Um notebook",
-      ],
-      "alternativa_correta": 3,
-    });
-
+    quiz.shuffle();
     void respondeu(int respostaNumero) {
       setState(() {
         if (quiz[perguntaNumero - 1]['alternativa_correta'] == respostaNumero) {
