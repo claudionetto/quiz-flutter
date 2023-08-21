@@ -29,11 +29,13 @@ class Resultado extends StatelessWidget {
               children: [
                 Text(
                   'Resultado',
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
                 ),
+                Image.asset('assets/images/fogo.png', width: 120),
                 Text(
                   'Você acertou \n ${argumentos.acertos} de 10 \n perguntas',
-                  style: TextStyle(fontSize: 20),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
                 ),
                 SizedBox(
                   width: double.infinity,

@@ -15,18 +15,22 @@ class _QuizState extends State<Quiz> {
   int perguntaNumero = 1;
   int acertos = 0;
   int erros = 0;
+  bool atualizar = true;
 
   @override
   Widget build(BuildContext context) {
-    quiz.shuffle();
+    if (atualizar) {
+      quiz.shuffle();
+      atualizar = false;
+    }
     void respondeu(int respostaNumero) {
       setState(() {
         if (quiz[perguntaNumero - 1]['alternativa_correta'] == respostaNumero) {
           print('Acertou');
           acertos++;
         } else {
-          print('Errou');
-          erros++;
+          Navigator.pushNamed(context, 'Resultado',
+              arguments: Argumentos(acertos));
         }
 
         print('Acertos totais = $acertos ,  Erros totais = $erros');
@@ -47,20 +51,27 @@ class _QuizState extends State<Quiz> {
           centerTitle: true,
         ),
         body: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(25.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Align(
-                alignment: Alignment.topRight,
-                child: Text(
-                  'Pergunta $perguntaNumero de 10',
-                  style: TextStyle(fontSize: 20),
-                ),
-              ),
+                  alignment: Alignment.topRight,
+                  child: Row(
+                    children: [
+                      Image.asset('assets/images/fogo.png', width: 45),
+                      SizedBox(width: 5),
+                      Text(
+                        acertos.toString(),
+                        style: TextStyle(
+                            fontSize: 42, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  )),
               Text(
-                'Pergunta: \n\n' + quiz[perguntaNumero - 1]['pergunta'],
-                style: TextStyle(fontSize: 20),
+                quiz[perguntaNumero - 1]['pergunta'],
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
               ),
               SizedBox(
                 width: double.infinity,
