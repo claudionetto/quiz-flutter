@@ -1,16 +1,10 @@
-# quiz_mobile
+# Projeto Quiz Mobile TI (Tudo Incluso)
 
-A new Flutter project.
+## Objetivo:
 
-## Getting Started
+Projeto realizado na intenção de fornecer aprendizado sobre a área de TI, atravéz de um quiz com tentativa e erro
 
-This project is a starting point for a Flutter application.
+## Tecnlogias:
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Visual Studio Code 
+- Flutter
