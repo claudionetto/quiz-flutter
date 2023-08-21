@@ -18,7 +18,7 @@ class Resultado extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Quiz Flutter e Dart'),
+          title: Text('Quiz TI(Tudo Incluso)'),
           centerTitle: true,
         ),
         body: Padding(
