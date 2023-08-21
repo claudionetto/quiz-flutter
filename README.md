@@ -1,4 +1,4 @@
-# Projeto Quiz Mobile TI (Tudo Incluso)
+# Projeto Quiz Mobile TI (Tudo Incluso) 📱
 
 ## Objetivo:
 
